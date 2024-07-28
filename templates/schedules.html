@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Agendas</h1>
+<ul class="list-group">
+    {% for schedule in schedules %}
+        <li class="list-group-item">
+            Vendedor ID: {{ schedule.seller_id }}, Punto de Venta ID: {{ schedule.store_id }}, Fecha: {{ schedule.date }}
+            <ul class="list-group mt-2">
+                {% for slot in schedule.time_slots %}
+                    <li class="list-group-item">De {{ slot.start_time }} a {{ slot.end_time }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Citas</h1>
+<ul class="list-group">
+    {% for appointment in appointments %}
+        <li class="list-group-item">
+            Agenda ID: {{ appointment.schedule_id }}, Cliente: {{ appointment.customer_name }}, Email: {{ appointment.customer_email }}
+            <ul class="list-group mt-2">
+                <li class="list-group-item">De {{ appointment.time_slot.start_time }} a {{ appointment.time_slot.end_time }}</li>
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

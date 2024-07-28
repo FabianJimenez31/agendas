@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Puntos de Venta</h1>
+<ul class="list-group">
+    {% for store in stores %}
+        <li class="list-group-item">{{ store.name }} - {{ store.location }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
